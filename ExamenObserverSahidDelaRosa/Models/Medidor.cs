@@ -15,14 +15,12 @@ namespace ExamenObserverSahidDelaRosa.Models
             if (bateria.ActividadBateria)
             {
                 estado = "cargando";
-                int seg_restantes = 100 - bateria.PorcentajeCarga; 
-                tiempo = $"{seg_restantes} segundos para terminar de cargarse";
+                tiempo = $"{bateria.Tiempo} segundos para terminar de cargarse";
             }
             else
             {
                 estado = "sin cargar";
-                int seg_restantes = bateria.PorcentajeCarga;
-                tiempo = $"{seg_restantes} segundos para descargarse";
+                tiempo = $"{bateria.Tiempo} segundos para descargarse";
             }
             if (bateria.EstadoBateria)
             {

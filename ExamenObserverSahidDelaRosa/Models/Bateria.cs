@@ -22,6 +22,13 @@ namespace ExamenObserverSahidDelaRosa.Models
                 {
                     Notificar();
                 }
+                if (conectado)
+                {
+                    if(carga < 100)
+                    {
+                        cargando = true;
+                    }
+                }
             }
         }
         public bool ActividadBateria
@@ -46,18 +53,24 @@ namespace ExamenObserverSahidDelaRosa.Models
                 {
                     Notificar();
                     carga = value;
+                    tiempo = value;
                 }
                 if(carga >= 100)
                 {
                     cargando = false;
                     carga = 100;
-                    
                 }
             }
         }
         public int Tiempo
         {
-            get { return tiempo; }
+            get {
+                if (cargando)
+                {
+                    return 100 - tiempo;
+                }
+                else return tiempo;
+            }
             set { tiempo = value; }
         }
         public Bateria()
@@ -65,7 +78,7 @@ namespace ExamenObserverSahidDelaRosa.Models
             conectado = false;
             cargando = false;
             carga = 0;
-            tiempo = (100 - carga) / 6;
+            tiempo = 0;
         }
 
         public void Notificar()

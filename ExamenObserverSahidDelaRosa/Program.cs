@@ -13,7 +13,7 @@ namespace ExamenObserverSahidDelaRosa
             
             Medidor medidor = new Medidor();
             bateria.EstadoBateria = true; //Conectado
-            bateria.ActividadBateria = true;
+            //bateria.ActividadBateria = true;
             bateria.Suscribir(medidor);
 
             aTimer = new System.Timers.Timer();
