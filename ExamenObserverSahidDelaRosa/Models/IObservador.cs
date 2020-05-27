@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ObserverDemo.Models
+namespace ExamenObserverSahidDelaRosa.Models
 {
     public interface IObservador
     {
